@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#ffe9f0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<title>Untuk Adek 🎀</title>
+<style>
+  /* ============================================================
+     CONFIG — palette & tokens
+     ============================================================ */
+  :root{
+    --pink-bg-1:#fff7f9;
+    --pink-bg-2:#ffe9f0;
+    --pink-soft:#ffd6e4;
+    --pink-mid:#ff9ebb;
+    --pink-deep:#f4739a;
+    --pink-line:#ffc2d6;
+    --white:#ffffff;
+    --ink:#5b3a49;
+    --ink-soft:#9c7c88;
+    --gold:#f7cf8a;
+    --cibao:#fff3e6;
+    --meo:#ffb066;
+    --shadow:0 12px 30px rgba(244,115,154,0.16);
+  }
+
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  html,body{margin:0;padding:0;width:100%;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;height:auto;}
+  body{
+    font-family:'Poppins',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:
+      radial-gradient(ellipse at 20% 0%, #fff0f5 0%, transparent 55%),
+      radial-gradient(ellipse at 85% 15%, #ffe3ee 0%, transparent 50%),
+      linear-gradient(180deg, var(--pink-bg-1) 0%, var(--pink-bg-2) 100%);
+    min-height:100vh;min-height:100dvh;
+    color:var(--ink);position:relative;-webkit-font-smoothing:antialiased;
+  }
+  .script{font-family:'Caveat','Snell Roundhand','Brush Script MT','Segoe Script',cursive;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ============ Background decoration ============ */
+  #bg-decor{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0;}
+  .float-item{position:absolute;opacity:0.55;will-change:transform;animation:drift linear infinite;filter:drop-shadow(0 2px 6px rgba(244,115,154,0.15));}
+  @keyframes drift{0%{transform:translateY(0) translateX(0) rotate(0deg);}50%{transform:translateY(-18px) translateX(8px) rotate(8deg);}100%{transform:translateY(0) translateX(0) rotate(0deg);}}
+  @keyframes twinkle{0%,100%{opacity:0.2;transform:scale(0.85);}50%{opacity:0.9;transform:scale(1.1);}}
+  .sparkle-item{position:absolute;animation:twinkle ease-in-out infinite;}
+
+  /* ============ Layout ============ */
+  .wrap{
+    position:relative;z-index:1;min-height:100vh;min-height:100dvh;
+    display:flex;flex-direction:column;align-items:center;
+    padding:48px 20px 64px;
+    padding-top:max(48px, env(safe-area-inset-top));
+    padding-bottom:max(64px, env(safe-area-inset-bottom));
+    max-width:520px;margin:0 auto;text-align:center;transition:opacity 0.4s ease;
+  }
+  .wrap.fading-out{opacity:0;pointer-events:none;}
+
+  .top-tag{
+    font-size:13px;letter-spacing:0.04em;color:var(--pink-deep);
+    background:var(--white);border:1px solid var(--pink-line);
+    padding:6px 16px;border-radius:999px;box-shadow:var(--shadow);
+    margin-bottom:22px;animation:fadeInDown 0.9s ease both;
+  }
+  h1.opening{font-size:22px;font-weight:600;line-height:1.5;margin:0 0 6px;color:var(--ink);animation:fadeInDown 1.1s ease both;}
+  .opening .em{color:var(--pink-deep);font-weight:700;}
+  .sub-opening{font-size:15px;color:var(--ink-soft);margin:0 0 36px;animation:fadeInDown 1.25s ease both;}
+  @keyframes fadeInDown{from{opacity:0;transform:translateY(-14px);}to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+  /* ============ Gift Box ============ */
+  .giftbox-stage{position:relative;width:220px;height:220px;margin:0 auto 30px;display:flex;align-items:center;justify-content:center;animation:fadeInUp 1s ease 0.3s both;}
+  .giftbox-glow{position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle, rgba(255,158,187,0.45) 0%, transparent 70%);animation:glowPulse 3.6s ease-in-out infinite;}
+  @keyframes glowPulse{0%,100%{opacity:0.55;transform:scale(0.95);}50%{opacity:1;transform:scale(1.08);}}
+  #giftbox{position:relative;cursor:pointer;animation:floatBox 3.2s ease-in-out infinite;touch-action:manipulation;z-index:2;}
+  #giftbox:active{transform:scale(0.96);}
+  @keyframes floatBox{0%,100%{transform:translateY(0);}50%{transform:translateY(-9px);}}
+  #giftbox.shake{animation:shakeBox 0.5s ease;}
+  @keyframes shakeBox{0%,100%{transform:translateX(0) translateY(0);}20%{transform:translateX(-8px) rotate(-3deg);}40%{transform:translateX(7px) rotate(3deg);}60%{transform:translateX(-5px) rotate(-2deg);}80%{transform:translateX(5px) rotate(2deg);}}
+  #giftbox.unlocked{animation:floatBox 3.2s ease-in-out infinite, popOpen 0.7s cubic-bezier(.34,1.56,.64,1);}
+  #giftbox.ready{filter:drop-shadow(0 0 18px rgba(244,115,154,0.28));}
+  #giftbox.ready::after{
+    content:'Tekan kadonya, Adek 🎁';position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);
+    white-space:nowrap;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,0.92);color:var(--pink-deep);
+    font-size:12px;font-weight:700;box-shadow:0 8px 20px rgba(244,115,154,0.15);animation:readyPulse 1.6s ease-in-out infinite;pointer-events:none;
+  }
+  @keyframes readyPulse{0%,100%{transform:translateX(-50%) translateY(0);opacity:.78;}50%{transform:translateX(-50%) translateY(-4px);opacity:1;}}
+  @keyframes popOpen{0%{transform:scale(1);}40%{transform:scale(1.18) rotate(-4deg);}70%{transform:scale(0.94) rotate(2deg);}100%{transform:scale(1);}}
+
+  .box-msg{min-height:60px;font-size:14.5px;line-height:1.65;color:var(--pink-deep);font-weight:600;opacity:0;transform:translateY(6px);transition:opacity 0.35s ease, transform 0.35s ease;margin-bottom:8px;}
+  .box-msg.show{opacity:1;transform:translateY(0);}
+  .box-msg span{display:block;}
+  .box-msg .soft{color:var(--ink-soft);font-weight:500;font-size:13px;margin-top:2px;}
+
+  /* ============ Secret hint button ============ */
+  .hint-trigger{
+    margin-top:14px;background:transparent;border:1px solid var(--pink-line);color:var(--pink-deep);
+    font-size:13px;padding:9px 18px;border-radius:999px;cursor:pointer;font-family:inherit;
+    transition:background 0.25s ease, transform 0.15s ease;animation:fadeInUp 1s ease 0.7s both;
+  }
+  .hint-trigger:active{transform:scale(0.96);}
+  .hint-trigger:hover{background:var(--white);}
+
+  /* ============ Clue panel ============ */
+  .clue-panel{margin-top:26px;width:100%;max-width:400px;background:var(--white);border:1px solid var(--pink-line);border-radius:20px;box-shadow:var(--shadow);padding:20px 20px 18px;animation:fadeInUp 0.6s ease both;}
+  .clue-title{font-size:13.5px;color:var(--ink-soft);margin:0 0 14px;}
+  .clue-item{display:none;text-align:left;padding:12px 14px;background:var(--pink-bg-1);border-radius:14px;margin-bottom:10px;animation:fadeInUp 0.5s ease both;}
+  .clue-item.visible{display:block;}
+  .clue-item .clue-tag{font-size:11px;color:var(--pink-mid);font-weight:700;letter-spacing:0.03em;margin-bottom:4px;}
+  .clue-item .clue-text{font-size:14px;color:var(--ink);line-height:1.55;}
+  .clue-next-btn{width:100%;background:linear-gradient(135deg,var(--pink-mid),var(--pink-deep));color:#fff;border:none;border-radius:14px;padding:11px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 8px 18px rgba(244,115,154,0.3);transition:transform 0.15s ease, opacity 0.3s ease;}
+  .clue-next-btn:active{transform:scale(0.97);}
+  .clue-done{font-size:13px;color:var(--ink-soft);text-align:center;padding-top:2px;}
+
+  /* ============ Modal ============ */
+  .modal-overlay{position:fixed;inset:0;background:rgba(91,58,73,0.35);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;z-index:50;padding:24px;opacity:0;pointer-events:none;transition:opacity 0.3s ease;}
+  .modal-overlay.open{opacity:1;pointer-events:auto;}
+  .modal-box{background:var(--white);border-radius:24px;padding:28px 26px 24px;max-width:320px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(91,58,73,0.25);transform:scale(0.85);transition:transform 0.35s cubic-bezier(.34,1.56,.64,1);}
+  .modal-overlay.open .modal-box{transform:scale(1);}
+  .modal-emoji{font-size:30px;margin-bottom:10px;}
+  .modal-title{font-size:16px;font-weight:700;color:var(--pink-deep);margin:0 0 10px;}
+  .modal-text{font-size:14px;color:var(--ink);line-height:1.65;margin:0 0 20px;}
+  .modal-btn{background:var(--pink-bg-2);color:var(--pink-deep);border:1px solid var(--pink-line);border-radius:999px;padding:9px 24px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;}
+  .modal-btn:active{transform:scale(0.96);}
+
+  /* ============ Music toggle ============ */
+  .music-btn{
+    position:fixed;bottom:max(20px, env(safe-area-inset-bottom));right:max(20px, env(safe-area-inset-right));
+    width:48px;height:48px;border-radius:50%;background:var(--white);border:1px solid var(--pink-line);
+    box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;z-index:30;
+  }
+  .music-btn:active{transform:scale(0.94);}
+
+  /* ============ AFTER UNLOCK state ============ */
+  #after-unlock{display:none;flex-direction:column;align-items:center;animation:fadeInUp 0.8s ease both;}
+  #after-unlock.show{display:flex;}
+  .unlock-title{font-size:24px;font-weight:700;color:var(--pink-deep);margin:6px 0 4px;}
+  .unlock-sub{font-size:16px;color:var(--ink);margin:0 0 28px;font-weight:600;}
+  .unlock-cta{
+    background:linear-gradient(135deg,var(--pink-mid),var(--pink-deep));color:#fff;border:none;border-radius:999px;
+    padding:14px 32px;font-size:15px;font-weight:600;cursor:pointer;box-shadow:0 12px 26px rgba(244,115,154,0.35);
+    font-family:inherit;text-decoration:none;display:inline-block;
+  }
+  .unlock-cta:active{transform:scale(0.97);}
+
+  .confetti-piece{position:fixed;top:-20px;z-index:60;pointer-events:none;animation:confettiFall linear forwards;}
+  @keyframes confettiFall{to{transform:translateY(110vh) rotate(540deg);opacity:0.4;}}
+
+  #before-unlock{display:flex;flex-direction:column;align-items:center;width:100%;}
+  #before-unlock.hide{display:none;}
+
+  @media (min-width:600px){.wrap{padding-top:64px;}h1.opening{font-size:24px;}}
+
+  /* ============================================================
+     BOOK VIEW — flow: hero -> message -> 13 chapters -> cibao ->
+     meo -> duo -> gallery -> final -> ending
+     ============================================================ */
+  #book-view{
+    display:none;position:relative;z-index:2;min-height:100vh;min-height:100dvh;
+    flex-direction:column;max-width:560px;margin:0 auto;
+    padding:max(20px, env(safe-area-inset-top)) 0 max(14px, env(safe-area-inset-bottom));
+    opacity:0;transition:opacity 0.45s ease;
+  }
+  #book-view.show{display:flex;}
+  #book-view.show.visible{opacity:1;}
+
+  .book-topbar{display:flex;align-items:center;justify-content:space-between;padding:0 20px 14px;}
+  .book-progress{
+    font-size:12.5px;letter-spacing:0.04em;color:var(--pink-deep);font-weight:700;background:var(--white);
+    border:1px solid var(--pink-line);padding:5px 14px;border-radius:999px;box-shadow:var(--shadow);font-variant-numeric:tabular-nums;
+  }
+  .book-restart{font-family:inherit;font-size:12.5px;color:var(--ink-soft);background:transparent;border:1px solid var(--pink-line);padding:5px 14px;border-radius:999px;cursor:pointer;}
+  .book-restart:active{transform:scale(0.96);}
+
+  .book-stage{position:relative;flex:1;overflow:hidden;padding:4px 20px 10px;}
+  .book-page{
+    position:absolute;inset:0;padding:4px 20px 10px;overflow-y:auto;-webkit-overflow-scrolling:touch;
+    opacity:0;transform:translateX(24px) scale(0.98);
+    transition:transform 0.5s cubic-bezier(.22,.9,.3,1), opacity 0.42s ease;pointer-events:none;
+  }
+  .book-page.active{opacity:1;transform:translateX(0) scale(1);pointer-events:auto;position:relative;}
+  .book-page.leaving-prev{opacity:0;transform:translateX(-24px) scale(0.98);}
+  .book-page.leaving-next{opacity:0;transform:translateX(24px) scale(0.98);}
+
+  .ch-kicker{font-size:12px;letter-spacing:0.03em;color:var(--pink-mid);font-weight:700;margin:0 0 10px;}
+  .ch-title{font-size:21px;font-weight:700;color:var(--pink-deep);line-height:1.4;margin:0 0 4px;}
+  .ch-date{font-size:12.5px;color:var(--ink-soft);margin:0 0 18px;}
+  .ch-text{font-size:14.5px;line-height:1.75;color:var(--ink);text-align:left;margin:0 0 14px;}
+  .ch-text:last-of-type{margin-bottom:20px;}
+
+  .photo-frame{
+    position:relative;width:100%;border-radius:18px;overflow:hidden;background:var(--white);
+    border:1px solid var(--pink-line);box-shadow:var(--shadow);margin:0 0 18px;aspect-ratio:4/3;
+  }
+  .photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .photo-frame.placeholder{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+    background:radial-gradient(ellipse at 30% 20%, #fff0f5 0%, transparent 60%), linear-gradient(135deg,var(--pink-bg-2),var(--pink-soft));
+  }
+  .photo-frame.placeholder .ph-icon{font-size:26px;opacity:0.7;}
+  .photo-frame.placeholder .ph-text{font-size:11px;color:var(--ink-soft);padding:0 16px;text-align:center;line-height:1.5;}
+  .photo-frame.placeholder .ph-path{font-size:10.5px;color:var(--pink-deep);font-weight:600;background:rgba(255,255,255,0.7);padding:2px 8px;border-radius:999px;}
+  .photo-frame.cover-frame{aspect-ratio:1/1;max-width:210px;margin:0 auto 22px;border-radius:50%;}
+
+  .ch-cover{text-align:center;}
+  .ch-cover .ch-eyebrow{font-size:12.5px;color:var(--ink-soft);margin-bottom:6px;letter-spacing:0.02em;}
+  .ch-cover .ch-big-title{font-size:24px;font-weight:700;color:var(--pink-deep);line-height:1.4;margin:0 0 10px;}
+  .ch-cover .ch-story-label{font-size:13px;letter-spacing:0.14em;color:var(--gold);font-weight:700;margin:0 0 4px;}
+  .ch-cover .ch-story-sub{font-size:14px;color:var(--ink-soft);font-style:italic;margin:0 0 26px;}
+
+  .fragment-list{list-style:none;margin:0 0 16px;padding:0;text-align:left;}
+  .fragment-list li{font-size:14px;color:var(--ink);background:var(--pink-bg-1);border-left:3px solid var(--pink-mid);padding:9px 12px;border-radius:8px;margin-bottom:8px;line-height:1.55;}
+  .chat-bubbles{display:flex;flex-direction:column;gap:8px;margin:0 0 18px;}
+  .chat-bubble{align-self:flex-start;max-width:78%;background:var(--white);border:1px solid var(--pink-line);border-radius:14px 14px 14px 4px;padding:9px 13px;font-size:13.5px;color:var(--ink);box-shadow:var(--shadow);text-align:left;}
+  .chat-bubble.mine{align-self:flex-end;background:linear-gradient(135deg,var(--pink-mid),var(--pink-deep));color:#fff;border:none;border-radius:14px 14px 4px 14px;}
+
+  .scrap-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px;}
+  .scrap-item{border-radius:14px;overflow:hidden;border:1px solid var(--pink-line);box-shadow:var(--shadow);background:var(--white);}
+  .scrap-item .photo-frame{margin:0;border:none;box-shadow:none;border-radius:14px 14px 0 0;aspect-ratio:1/1;}
+  .scrap-item .scrap-caption{font-size:11px;color:var(--ink-soft);padding:6px 8px 8px;text-align:center;}
+
+  .evidence-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.04em;color:var(--pink-deep);background:var(--pink-bg-2);border:1px solid var(--pink-line);padding:3px 10px;border-radius:999px;margin-bottom:8px;}
+
+  .classified-box{background:#fbeff4;border:1.5px dashed var(--pink-mid);border-radius:16px;padding:16px 16px 14px;margin:0 0 16px;text-align:left;}
+  .classified-stamp{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.08em;color:#fff;background:var(--pink-deep);padding:3px 10px;border-radius:4px;transform:rotate(-3deg);margin-bottom:10px;}
+  .classified-file{font-size:13.5px;color:var(--ink);padding:8px 0;border-top:1px dashed var(--pink-line);}
+  .classified-file:first-of-type{border-top:none;}
+  .classified-file .file-tag{font-weight:700;color:var(--pink-mid);margin-right:6px;}
+
+  .letter-box{background:var(--white);border:1px solid var(--pink-line);border-radius:18px;box-shadow:var(--shadow);padding:22px 20px;text-align:left;margin-bottom:18px;}
+  .letter-box .ch-text{font-size:14.5px;}
+  .letter-signoff{text-align:right;font-weight:700;color:var(--pink-deep);font-size:15px;margin-top:16px;}
+
+  .ending-page{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:60vh;padding-top:20px;}
+  .ending-num{font-size:13px;color:var(--ink-soft);margin-bottom:10px;letter-spacing:0.04em;}
+  .ending-title{font-size:26px;font-weight:700;color:var(--pink-deep);margin:0 0 6px;}
+  .ending-but{font-size:15px;color:var(--ink-soft);margin:14px 0 4px;}
+  .ending-line{font-size:18px;font-weight:600;color:var(--pink-deep);margin:2px 0;}
+  .ending-sub{font-size:13.5px;color:var(--ink-soft);margin:10px 0 26px;}
+
+  .ch-cta{background:linear-gradient(135deg,var(--pink-mid),var(--pink-deep));color:#fff;border:none;border-radius:999px;padding:13px 28px;font-size:14.5px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:0 12px 26px rgba(244,115,154,0.3);}
+  .ch-cta:active{transform:scale(0.97);}
+  .ch-cta.ghost{background:transparent;color:var(--pink-deep);border:1px solid var(--pink-line);box-shadow:none;}
+
+  .book-navrow{display:flex;align-items:center;justify-content:space-between;padding:10px 20px 4px;gap:14px;}
+  .book-nav-btn{width:46px;height:46px;border-radius:50%;background:var(--white);border:1px solid var(--pink-line);box-shadow:var(--shadow);font-size:17px;color:var(--pink-deep);cursor:pointer;flex-shrink:0;}
+  .book-nav-btn:active{transform:scale(0.94);}
+  .book-nav-btn:disabled{opacity:0.35;cursor:default;}
+  .book-dots{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;}
+  .book-dot{width:6px;height:6px;border-radius:50%;background:var(--pink-soft);transition:background 0.25s ease, transform 0.25s ease;}
+  .book-dot.on{background:var(--pink-deep);transform:scale(1.3);}
+
+  .egg-heart{position:fixed;top:max(14px, env(safe-area-inset-top));left:14px;font-size:14px;opacity:0.35;background:none;border:none;cursor:pointer;z-index:31;padding:8px;}
+
+  /* ============ NEW: Hero birthday page ============ */
+  .hero-page{text-align:center;padding-top:6px;}
+  .hero-emojis{font-size:22px;letter-spacing:6px;margin-bottom:6px;opacity:0.85;}
+  .hero-headline{font-size:30px;font-weight:700;color:var(--pink-deep);line-height:1.25;margin:6px 0 4px;}
+  .hero-name{font-family:'Caveat',cursive;font-size:44px;color:var(--pink-mid);display:block;margin:2px 0 12px;}
+  .hero-msg{font-size:14.5px;color:var(--ink);line-height:1.7;max-width:400px;margin:0 auto 26px;}
+  .hero-decor-row{font-size:22px;margin-bottom:22px;letter-spacing:10px;opacity:0.9;}
+
+  /* ============ NEW: Birthday message / letter-style page ============ */
+  .stamp-corner{
+    position:absolute;top:14px;right:16px;width:46px;height:46px;border:2px dashed var(--pink-mid);
+    border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:18px;opacity:0.6;transform:rotate(6deg);
+  }
+  .message-paper{
+    position:relative;background:var(--white);border:1px solid var(--pink-line);border-radius:20px;
+    box-shadow:var(--shadow);padding:28px 22px 22px;text-align:left;margin:0 0 20px;
+  }
+  .message-paper .ch-text{font-family:inherit;}
+  .message-signoff{text-align:right;font-family:'Caveat',cursive;font-size:26px;color:var(--pink-deep);margin-top:10px;}
+
+  /* ============ NEW: Character pages (Cibao / Me'o) ============ */
+  .char-page{text-align:center;}
+  .char-transition{font-size:14px;color:var(--ink-soft);line-height:1.7;margin:0 0 22px;text-align:left;}
+  .char-badge{
+    display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.06em;color:var(--pink-deep);
+    background:var(--pink-bg-2);border:1px solid var(--pink-line);padding:4px 14px;border-radius:999px;margin-bottom:14px;
+  }
+  .char-name{font-size:22px;font-weight:700;color:var(--pink-deep);margin:0 0 4px;}
+  .char-caption{font-size:14px;color:var(--ink-soft);font-style:italic;margin:0 0 20px;}
+  .polaroid{
+    position:relative;width:78%;max-width:230px;margin:0 auto 20px;background:var(--white);
+    border-radius:8px;padding:14px 14px 34px;box-shadow:0 16px 34px rgba(244,115,154,0.22);
+    transform:rotate(-3deg);transition:transform 0.25s ease;
+  }
+  .polaroid.rot-right{transform:rotate(3deg);}
+  .polaroid:hover, .polaroid:active{transform:rotate(0deg) translateY(-4px) scale(1.02);}
+  .polaroid .photo-frame{margin:0;border:none;box-shadow:none;border-radius:2px;aspect-ratio:1/1;}
+  .polaroid .polaroid-cap{font-family:'Caveat',cursive;font-size:19px;color:var(--ink);text-align:center;margin-top:8px;}
+  .polaroid .tape{
+    position:absolute;top:-10px;left:50%;transform:translateX(-50%) rotate(-4deg);
+    width:56px;height:20px;background:rgba(255,214,228,0.75);border:1px solid rgba(255,255,255,0.5);
+  }
+  .cibao-frame .photo-frame.placeholder{background:linear-gradient(135deg,var(--cibao),#ffe6cc);}
+  .meo-frame .photo-frame.placeholder{background:linear-gradient(135deg,#fff0dd,#ffdca8);}
+
+  /* ============ NEW: Duo / together page ============ */
+  .duo-row{display:flex;gap:16px;justify-content:center;align-items:flex-end;margin:0 0 8px;flex-wrap:wrap;}
+  .duo-row .polaroid{width:44%;max-width:170px;}
+  .duo-plus{font-size:22px;color:var(--pink-mid);align-self:center;margin:0 4px 20px;}
+
+  /* ============ NEW: Gallery page ============ */
+  .gallery-scroll{display:flex;gap:14px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+  .gallery-scroll::-webkit-scrollbar{display:none;}
+  .gallery-scroll .polaroid{flex:0 0 auto;width:150px;scroll-snap-align:center;margin:0;}
+  .gallery-hint{font-size:12px;color:var(--ink-soft);margin-bottom:4px;}
+
+  /* ============ NEW: Envelope / special letter page ============ */
+  .envelope-wrap{display:flex;flex-direction:column;align-items:center;padding-top:10px;}
+  .envelope{position:relative;width:220px;height:150px;cursor:pointer;margin-bottom:18px;touch-action:manipulation;}
+  .envelope-body{position:absolute;inset:0;background:var(--white);border:1px solid var(--pink-line);border-radius:10px;box-shadow:var(--shadow);}
+  .envelope-flap{
+    position:absolute;top:0;left:0;width:100%;height:0;border-left:110px solid transparent;border-right:110px solid transparent;
+    border-top:78px solid var(--pink-soft);transform-origin:top;transition:transform 0.6s cubic-bezier(.34,1.2,.64,1);z-index:3;
+  }
+  .envelope.open .envelope-flap{transform:rotateX(180deg);}
+  .envelope-heart{position:absolute;top:56px;left:50%;transform:translateX(-50%);font-size:20px;z-index:2;color:var(--pink-deep);}
+  .envelope-hint{font-size:13px;color:var(--pink-deep);font-weight:600;margin-bottom:22px;}
+  .envelope-letter{
+    max-width:400px;background:var(--white);border:1px solid var(--pink-line);border-radius:18px;box-shadow:var(--shadow);
+    padding:22px 20px;text-align:left;opacity:0;transform:translateY(14px);transition:opacity 0.5s ease, transform 0.5s ease;max-height:0;overflow:hidden;
+  }
+  .envelope-letter.show{opacity:1;transform:translateY(0);max-height:900px;padding:22px 20px;}
+
+  /* ============ NEW: Final birthday page ============ */
+  .final-page{text-align:center;}
+  .final-icons{font-size:24px;letter-spacing:8px;margin-bottom:14px;}
+  .final-title{font-size:26px;font-weight:700;color:var(--pink-deep);margin:0 0 14px;}
+  .final-msg{font-size:14.5px;color:var(--ink);line-height:1.8;max-width:400px;margin:0 auto 18px;text-align:left;}
+  .final-sign{font-family:'Caveat',cursive;font-size:28px;color:var(--pink-deep);margin:6px 0 26px;}
+  .final-btn-row{display:flex;flex-direction:column;gap:10px;align-items:center;}
+  .final-btn{
+    background:var(--white);color:var(--pink-deep);border:1px solid var(--pink-line);border-radius:999px;
+    padding:12px 26px;font-size:13.5px;font-weight:600;cursor:pointer;font-family:inherit;box-shadow:var(--shadow);width:100%;max-width:280px;
+  }
+  .final-btn.primary{background:linear-gradient(135deg,var(--pink-mid),var(--pink-deep));color:#fff;border:none;box-shadow:0 12px 26px rgba(244,115,154,0.3);}
+  .final-btn:active{transform:scale(0.97);}
+
+  .tiny-mascot{position:absolute;font-size:16px;opacity:0.5;pointer-events:none;}
+</style>
+</head>
+<body>
+
+<div id="bg-decor"></div>
+
+<div class="wrap">
+
+  <!-- ============ GIFT (opening) — countdown removed, ready to open ============ -->
+  <div id="before-unlock">
+    <div class="top-tag">🤫 Ssst...</div>
+    <h1 class="opening">Ada sesuatu untuk <span class="em">Adek</span>.</h1>
+    <p class="sub-opening">Kadonya udah siap dari tadi, cuma nunggu Adek yang buka. 🎁</p>
+
+    <div class="giftbox-stage">
+      <div class="giftbox-glow"></div>
+      <div id="giftbox" class="ready" aria-label="Buka kotak hadiah" role="button" tabindex="0">
+        <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="75" cy="128" rx="46" ry="7" fill="#F4739A" opacity="0.12"/>
+          <rect x="30" y="62" width="90" height="60" rx="10" fill="#FFD6E4"/>
+          <rect x="30" y="62" width="90" height="60" rx="10" fill="url(#boxGrad)"/>
+          <rect x="30" y="58" width="90" height="20" rx="8" fill="#FF9EBB"/>
+          <rect x="66" y="58" width="18" height="64" fill="#FFFFFF"/>
+          <path d="M30 78 H120" stroke="#FFFFFF" stroke-width="4" opacity="0.5"/>
+          <path d="M75 30c-10-14-34-10-30 6 3 12 20 18 30 26 10-8 27-14 30-26 4-16-20-20-30-6z" fill="#FFFFFF" stroke="#FF9EBB" stroke-width="2.5"/>
+          <circle cx="75" cy="98" r="11" fill="#FFFFFF" stroke="#FF9EBB" stroke-width="2"/>
+          <rect x="70" y="98" width="10" height="9" rx="2" fill="#FF9EBB"/>
+          <defs>
+            <linearGradient id="boxGrad" x1="30" y1="62" x2="120" y2="122" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFE3EE"/><stop offset="1" stop-color="#FFD6E4"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <div class="box-msg" id="boxMsg">
+      <span id="boxMsgMain"></span>
+      <span class="soft" id="boxMsgSoft"></span>
+    </div>
+
+    <button class="hint-trigger" id="lockReasonBtn">👀 Ada apa di dalam?</button>
+
+    <div class="clue-panel">
+      <p class="clue-title">Psst... ada sedikit petunjuk 👀</p>
+      <div class="clue-item" data-clue="1"><div class="clue-tag">HINT #01</div><div class="clue-text">Ditunggu ya isinya. 🎁</div></div>
+      <div class="clue-item" data-clue="2"><div class="clue-tag">HINT #02</div><div class="clue-text">Ada cerita tentang seseorang yang ga pernah menyerah dan bangkit 👀</div></div>
+      <div class="clue-item" data-clue="3"><div class="clue-tag">HINT #03</div><div class="clue-text">Dan ada dua makhluk imut yang nggak sabar mau nongol 🤍🐱</div></div>
+      <button class="clue-next-btn" id="clueNextBtn">Buka petunjuk →</button>
+      <p class="clue-done" id="clueDoneMsg" style="display:none;">Itu aja dulu petunjuknya. Sisanya rahasia. 🤭</p>
+    </div>
+  </div>
+
+  <!-- ============ AFTER UNLOCK ============ -->
+  <div id="after-unlock">
+    <div class="giftbox-stage">
+      <div class="giftbox-glow"></div>
+      <svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="75" cy="128" rx="46" ry="7" fill="#F4739A" opacity="0.12"/>
+        <rect x="30" y="70" width="90" height="52" rx="10" fill="url(#boxGrad2)"/>
+        <path d="M30 86 H120" stroke="#FFFFFF" stroke-width="4" opacity="0.5"/>
+        <rect x="66" y="70" width="18" height="52" fill="#FFFFFF"/>
+        <g transform="translate(0,-10) rotate(-18 40 60)"><rect x="20" y="52" width="70" height="16" rx="7" fill="#FF9EBB"/></g>
+        <path d="M75 20c-10-14-34-10-30 6 3 12 20 18 30 26 10-8 27-14 30-26 4-16-20-20-30-6z" fill="#FFFFFF" stroke="#FF9EBB" stroke-width="2.5"/>
+        <defs><linearGradient id="boxGrad2" x1="30" y1="70" x2="120" y2="122" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE3EE"/><stop offset="1" stop-color="#FFD6E4"/></linearGradient></defs>
+      </svg>
+    </div>
+    <p class="top-tag">🎉 Surprise Unlocked!</p>
+    <h2 class="unlock-title">Happy Birthday, Adek ❤️</h2>
+    <p class="unlock-sub">Ini baru permulaan...</p>
+    <button class="unlock-cta" id="openGiftCta">BUKA HADIAH →</button>
+  </div>
+
+</div>
+
+<!-- ============ MAIN EXPERIENCE: hero, message, 13 chapters, characters, gallery, letter, final ============ -->
+<div id="book-view" aria-hidden="true">
+  <div class="book-topbar">
+    <span class="book-progress" id="bookProgress">01 / 13</span>
+    <button class="book-restart" id="bookRestartBtn" title="Kembali ke awal">↺ awal</button>
+  </div>
+
+  <div class="book-stage" id="bookStage"></div>
+
+  <div class="book-navrow">
+    <button class="book-nav-btn" id="bookPrevBtn" aria-label="Halaman sebelumnya">←</button>
+    <div class="book-dots" id="bookDots"></div>
+    <button class="book-nav-btn" id="bookNextBtn" aria-label="Halaman berikutnya">→</button>
+  </div>
+</div>
+
+<!-- ============ Modal: apa isi kado ============ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-emoji">🤭</div>
+    <p class="modal-title">Buka aja langsung.</p>
+    <p class="modal-text">Kalau Mas kasih tahu sekarang, namanya bukan kejutan lagi dong. Tekan kadonya ya, Adek.</p>
+    <button class="modal-btn" id="modalCloseBtn">Oke deh 😗</button>
+  </div>
+</div>
+
+<button class="egg-heart" id="eggHeart" aria-label="♡">♡</button>
+<div class="modal-overlay" id="eggModalOverlay">
+  <div class="modal-box">
+    <div class="modal-emoji">🤫</div>
+    <p class="modal-title">Ketemu satu rahasia kecil.</p>
+    <p class="modal-text" id="eggModalText">Makasih udah baca sampai sini, Adek. Ini bonus dari Mas: dari semua chapter, yang paling sering Mas buka ulang buat senyum-senyum sendiri itu chapter Taman POLNES. Jangan bilang siapa-siapa ya. 🤭</p>
+    <button class="modal-btn" id="eggModalCloseBtn">Sip, rahasia aman 🤫</button>
+  </div>
+</div>
+
+<button class="music-btn" id="musicBtn" aria-label="Putar musik">🎵</button>
+<audio id="bgMusic" loop preload="auto">
+  <source src="audio/lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* ============================================================
+   =========================  MUDAH DIEDIT  ====================
+   ============================================================
+   - Ganti nama di CONFIG
+   - Ganti foto Cibao & Me'o di CONFIG.characters
+   - Tambah foto galeri di GALLERY
+   - Ganti musik: taruh file di audio/lagu.mp3 (nama file boleh diganti,
+     ubah juga <source src="..."> di atas)
+   ============================================================ */
+const CONFIG = {
+  adekName: "Adek",
+  senderName: "Mas",
+
+  // GANTI FOTO CIBAO DI SINI
+  characters: {
+    cibao: {
+      name: "Cibao / Cipao",
+      image: "photos/cibao.jpeg",
+      alt: "Cibao / Cipao, boneka bulat putih kesayangan Adek",
+      caption: "Si kecil kesayangan Adek ♡"
+    },
+    // GANTI FOTO ME'O DI SINI
+    meo: {
+      name: "Me'o",
+      image: "photos/meo.jpeg",
+      alt: "Me'o, boneka kucing roti kesayangan Adek",
+      caption: "Si kucing roti ♡"
+    }
+  }
+};
+
+// Tambah foto lain di sini kalau ada — boleh banyak, layout otomatis menyesuaikan.
+const GALLERY = [
+  { character: "cibao", image: "photos/cibao.jpeg", caption: "Cibao ♡" },
+  { character: "meo",   image: "photos/meo.jpeg",   caption: "Me'o 🐱" }
+];
+
+/* ============================================================
+   Background decoration
+   ============================================================ */
+(function initDecor(){
+  const container = document.getElementById('bg-decor');
+  const floatEmojis = ['♡','✦','🌸','🎀'];
+  const count = window.innerWidth < 500 ? 10 : 16;
+  for(let i=0;i<count;i++){
+    const el = document.createElement('div');
+    const isSparkle = Math.random() > 0.6;
+    el.className = isSparkle ? 'sparkle-item' : 'float-item';
+    el.textContent = floatEmojis[Math.floor(Math.random()*floatEmojis.length)];
+    el.style.left = Math.random()*94 + '%';
+    el.style.top = Math.random()*94 + '%';
+    el.style.fontSize = (isSparkle ? (10+Math.random()*8) : (14+Math.random()*14)) + 'px';
+    el.style.color = Math.random() > 0.5 ? '#ff9ebb' : '#ffc2d6';
+    el.style.animationDuration = (isSparkle ? (2+Math.random()*3) : (5+Math.random()*4)) + 's';
+    el.style.animationDelay = (Math.random()*4) + 's';
+    container.appendChild(el);
+  }
+})();
+
+/* ============================================================
+   Gift box interaction — sudah waktunya, langsung siap dibuka
+   ============================================================ */
+const giftbox = document.getElementById('giftbox');
+const boxMsg = document.getElementById('boxMsg');
+const boxMsgMain = document.getElementById('boxMsgMain');
+const boxMsgSoft = document.getElementById('boxMsgSoft');
+let unlocked = false;
+
+function handleGiftClick(){
+  if(unlocked) return;
+  unlocked = true;
+  triggerUnlock();
+}
+giftbox.addEventListener('click', handleGiftClick);
+giftbox.addEventListener('keydown', (e)=>{
+  if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); handleGiftClick(); }
+});
+
+/* Modal: apa isi kado */
+const modalOverlay = document.getElementById('modalOverlay');
+document.getElementById('lockReasonBtn').addEventListener('click', ()=> modalOverlay.classList.add('open'));
+document.getElementById('modalCloseBtn').addEventListener('click', ()=> modalOverlay.classList.remove('open'));
+modalOverlay.addEventListener('click', (e)=>{ if(e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+
+/* Secret clues, revealed one at a time */
+const clueItems = Array.from(document.querySelectorAll('.clue-item'));
+const clueNextBtn = document.getElementById('clueNextBtn');
+const clueDoneMsg = document.getElementById('clueDoneMsg');
+let clueIndex = 0;
+function revealNextClue(){
+  if(clueIndex >= clueItems.length) return;
+  clueItems[clueIndex].classList.add('visible');
+  clueIndex++;
+  if(clueIndex >= clueItems.length){
+    clueNextBtn.style.display = 'none';
+    clueDoneMsg.style.display = 'block';
+  }
+}
+clueNextBtn.addEventListener('click', revealNextClue);
+revealNextClue();
+
+/* Unlock sequence + confetti */
+function spawnConfetti(){
+  const shapes = ['♡','✦','●','🎀','🌸'];
+  const colors = ['#FF9EBB','#FFD6E4','#F4739A','#FFFFFF','#F7CF8A'];
+  const total = window.innerWidth < 500 ? 26 : 40;
+  for(let i=0;i<total;i++){
+    const piece = document.createElement('div');
+    piece.className = 'confetti-piece';
+    const shape = shapes[Math.floor(Math.random()*shapes.length)];
+    const size = 12 + Math.random()*8;
+    piece.textContent = shape;
+    piece.style.fontSize = size + 'px';
+    piece.style.left = Math.random()*100 + 'vw';
+    piece.style.color = colors[Math.floor(Math.random()*colors.length)];
+    piece.style.animationDuration = (2.5 + Math.random()*2) + 's';
+    piece.style.animationDelay = (Math.random()*0.6) + 's';
+    document.body.appendChild(piece);
+    setTimeout(()=> piece.remove(), 5500);
+  }
+}
+function triggerUnlock(){
+  giftbox.classList.add('unlocked');
+  spawnConfetti();
+  setTimeout(()=>{
+    document.getElementById('before-unlock').classList.add('hide');
+    document.getElementById('after-unlock').classList.add('show');
+    spawnConfetti();
+  }, 900);
+}
+
+/* Music toggle (no forced autoplay) */
+const musicBtn = document.getElementById('musicBtn');
+const bgMusic = document.getElementById('bgMusic');
+let musicPlaying = false;
+musicBtn.addEventListener('click', ()=>{
+  if(musicPlaying){ bgMusic.pause(); musicBtn.textContent = '🎵'; musicPlaying = false; }
+  else{ playMusic(); }
+});
+function playMusic(){
+  bgMusic.play().then(()=>{ musicBtn.textContent = '⏸'; musicPlaying = true; })
+    .catch(()=>{ musicBtn.textContent = '🎵'; musicPlaying = false; });
+}
+
+/* ============================================================
+   ============================================================
+   OUR STORY — 13 chapters (data preserved exactly)
+   ============================================================ */
+const CHAPTERS = [
+  {
+    type:'cover',
+    photo:'photos/cover.jpeg',
+    date:'13.09.2026',
+    title:'Happy 24th Birthday, Adek ♡',
+    label:'OUR STORY',
+    sub:'A little book about us.',
+    cta:'Mulai cerita →'
+  },
+  {
+    type:'text', kicker:'CHAPTER 02', title:'Semuanya Berawal Dari Sebuah Projek',
+    date:'12 Februari 2024', photo:'photos/chapter02.jpeg',
+    paragraphs:[
+      'Awalnya cuma soal projek biasa. Waktu itu ada projek Pak Rofiq, dan Adek coba chat wa mas minta nomor dari mas ilham.',
+      'Yang lucu, yang ngechat itu temen kos nya anjirrr, ga espek setakut itu sama kating T_T.',
+      'Ga nyangka gwehh...'
+    ]
+  },
+  {
+    type:'text', kicker:'CHAPTER 03', title:'Taman POLNES', photo:'photos/chapter03.jpeg',
+    paragraphs:[
+      'Ini pertemuan pertama kita yang beneran. Adek datang telat banget, sampai Mas ketiduran duluan di ruang robotik, yang momen applause yang saat udah ketemu di taman, dijelaskan perihal projek kawannya datang tuh dan di ajak ngomong...ehh ehhhh dia menolak merespon temannya dan tetap fokus kearah mas :p',
+      'Setelah dari situ deh bicara bicara, dari situ ketauan satu kesamaan penting: sama-sama doyan seblak, tapi entah kenapa HP terus yang di fokuskan humm humm.',
+      'Abis itu Mas anter Adek pulang ke kos. Simpel banget, tapi entah kenapa nempel terus di kepala sampai sekarang momen momen kecil begini :D...i like this all moment.'
+    ]
+  },
+  {
+    type:'fragments', kicker:'CHAPTER 04', title:'Pelan-Pelan Jadi Dekat', photo:'photos/chapter04.jpeg',
+    intro:'Ga ada tanggal pasti buat chapter ini. Cuma potongan-potongan yang keinget:',
+    fragments:[
+      'Chat mulai lebih sering, dengan alasan projek padahal beliau ada sesuatu yang harus di perjuangkan, tapi bukan itu intinya hehe.',
+      'Ketemuan jadi hal yang dicari-cari, bukan kebetulan tapi benar benar fokus projek.',
+      'Saling bantu tugas, saling nanya kabar tanpa diminta.',
+      'Ga ada momen "jadian dramatis" — cuma pelan-pelan, tau-tau udah nyaman gwehh.'
+    ]
+  },
+  {
+    type:'chat', kicker:'CHAPTER 05', title:'Kita Berjuang Dengan Cara Kita', photo:'photos/chapter05.jpeg',
+    intro:'Kuliah, kerja sampingan, skripsi — masing-masing punya perjuangan tersendiri. Tapi tiap hari selalu ada versi kita yang nanya hal-hal receh:',
+    bubbles:['main GT juga?','hari ini ngampus ga? ntar dianterin kebetulan lagi ke kampus','Gimana hari ini?'],
+    outro:'Kecil, tapi ternyata itu yang bikin terngiang ngiang dikepala.'
+  },
+  {
+    type:'text', kicker:'CHAPTER 06', title:'Malam-Malam Skripsi', photo:'photos/chapter06.jpeg',
+    paragraphs:[
+      'Beberapa kali Adek ngerjain skripsi di rumah Mas. Laptop nyala sampai malam, mata udah berat, tapi tetap lanjut.',
+      'Kadang capeknya bikin ngaco sendiri — ketawa ga jelas sampe subuhh biar ga ngantuk ae.',
+      'Ga elegan sama sekali, tapi ini salah satu versi favorit Mas dari kita berdua pada saat itu.'
+    ]
+  },
+  {
+    type:'text', kicker:'CHAPTER 07', title:'Akhirnya Kita Lulus', photo:'photos/chapter07.jpeg',
+    paragraphs:[
+      'Mas lulus duluan, akhir 2024. Adek nyusul akhir 2025.',
+      'Foto favorit Mas dari momen itu: Mas pakai batik, Adek pakai kebaya. Sesimpel itu, tapi rasanya kayak — ternyata kita beneran sampai di sini.',
+      'Ga usah dibuat sedih. Ini justru salah satu momen paling dibanggain.'
+    ]
+  },
+  {
+    type:'text', kicker:'CHAPTER 08', title:'Setelah Lulus, Ceritanya Belum Selesai', photo:'photos/chapter08.jpeg',
+    paragraphs:[
+      'Abis wisuda, masing-masing mulai sibuk lagi. Mas kerja di bantu adek untuk kerja Sanga-Sanga.',
+      'Adek berjuang mencari mencari pengalaman kerja, training, dan syukur alhamdulillah sekarang udah bekerja ya gess yak.',
+      'Tapi cerita kita ga berhenti di situ — cuma pindah ke bab berikutnya.'
+    ]
+  },
+  {
+    type:'scrapbook', kicker:'CHAPTER 09', title:'Jajan, Jalan, dan Seblak',
+    intro:'Chapter paling santai. Ga ada plot besar — cuma jajan, jalan-jalan, dan seblak (lagi, dan lagi).',
+    items:[
+      {photo:'photos/chapter-09-a.jpeg', caption:'seblak lagi, jajan lagi, wajib pokoknya.'},
+      {photo:'photos/chapter-09-b.jpeg', caption:'jalan sore, ga ada agenda'},
+      {photo:'photos/chapter-09-c.jpeg', caption:'foto asal jepret, jadi favorit'},
+      {photo:'photos/chapter-09-d.jpeg', caption:'random aee sih wkwk'}
+    ]
+  },
+  {
+    type:'text', kicker:'CHAPTER 10', title:'The Day I Lost My Masculinity', photo:'photos/chapter-10.jpeg',
+    paragraphs:[
+      'Suatu hari, martabat Mas sebagai laki-laki resmi diuji.',
+      'Adek iseng pakein lipstick, hijab, sampai celana perempuan ke Mas — lengkap dengan makeup, celana gw di pelorotin anjeerr.',
+      'Ya... hari itu Mas resmi jadi korban keisengan Adek. Tapi lucu sih, jujur. Ga bakal dilupain.'
+    ]
+  },
+  {
+    type:'evidence', kicker:'CHAPTER 11', title:'Adella Mode: GIBAH',
+    intro:'Ada satu mode Adek yang Mas hafal banget: mode gibah. Begitu mulai cerita orang, mulutnya otomatis monyong sendiri, ga sadar. Mas biasanya cuma senyum-senyum nahan ketawa liatin.',
+    items:[
+      {tag:'EVIDENCE #01', photo:'photos/chapter-11-a.jpeg'},
+      {tag:'EVIDENCE #02', photo:'photos/chapter-11-b.jpeg'}
+    ]
+  },
+  {
+    type:'classified', kicker:'CHAPTER 12', title:'The Jomok Archive', stamp:'CLASSIFIED — Mas & Adek Only',
+    intro:'Ini bagian rahasia. Isinya cuma kita yang ngerti. Beberapa inside joke yang kalau dijelasin ke orang lain malah jadi aneh.',
+    files:[
+      {tag:'FILE #01', text:'Kalian tau lah maksudnya. 🤭'},
+      {tag:'FILE #02', text:'Ga akan pernah dijelasin ke publik. Titik.'},
+      {tag:'FILE #03', text:'Rahasia negara level Adek & Mas.'}
+    ]
+  },
+  {
+    type:'letter', kicker:'CHAPTER 13', title:'Untuk Adek',
+    paragraphs:[
+      'Adek,',
+      'Nulis ini bukan buat kelihatan romantis — cuma pengen bilang makasih dan selamat Tlang Tahunnn.',
+      'Makasih udah nemenin dari projek receh sampai sekarang, dari yang jauh sampai akhirnya semua kelar.',
+      'Banyak hal kecil yang mungkin Adek ga sadar itu berarti banget buat Mas — jokes receh, gibah, banyak bacot sampe bibir termonyong monyong, sampai selalu repot buat mas kalau jatuh.',
+      'Semoga umur 24 ini lebih baik dari yang sebelumnya, dan cerita kita masih panjang.',
+      'Happy 24th Birthday, Adek ❤️'
+    ],
+    signoff:'— Mas'
+  }
+];
+const TOTAL_CHAPTERS = CHAPTERS.length; // 13, unchanged
+
+/* ============================================================
+   Extra pages: hero, message, characters, gallery, letter, final
+   These sit OUTSIDE the 13-chapter progress counter, same way
+   the old "ending" page did.
+   ============================================================ */
+const EXTRA_PAGES = ['hero','message','cibao-intro','cibao','meo-intro','meo','duo','gallery','letter','final','ending'];
+
+function charImg(key, extraClass){
+  const c = CONFIG.characters[key];
+  return photoFrame(c.image, extraClass, `Foto ${c.name} akan ditempel di sini ♡`);
+}
+
+function photoFrame(path, extraClass, placeholderText){
+  const cls = 'photo-frame' + (extraClass ? ' '+extraClass : '');
+  const displayPath = path || '';
+  const msg = placeholderText || 'Foto belum ditaruh di sini.';
+  return `<div class="${cls}" data-src="${displayPath}">
+      <img src="${displayPath}" alt="" loading="lazy"
+        onload="this.parentElement.classList.remove('placeholder')"
+        onerror="this.remove(); this.parentElement.classList.add('placeholder'); this.parentElement.innerHTML='<div class=&quot;ph-icon&quot;>🖼️</div><div class=&quot;ph-text&quot;>${msg}</div><div class=&quot;ph-path&quot;>${displayPath}</div>';">
+    </div>`;
+}
+
+function renderChapter(ch){
+  if(ch.type === 'cover'){
+    return `
+      <div class="ch-cover">
+        ${photoFrame(ch.photo, 'cover-frame')}
+        <p class="ch-eyebrow">${ch.date}</p>
+        <h1 class="ch-big-title">${ch.title}</h1>
+        <p class="ch-story-label">${ch.label}</p>
+        <p class="ch-story-sub">${ch.sub}</p>
+        <button class="ch-cta" data-action="next">${ch.cta}</button>
+      </div>`;
+  }
+  if(ch.type === 'text'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      ${ch.date ? `<p class="ch-date">${ch.date}</p>` : ''}
+      ${photoFrame(ch.photo)}
+      ${ch.paragraphs.map(p=>`<p class="ch-text">${p}</p>`).join('')}
+    `;
+  }
+  if(ch.type === 'fragments'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      ${photoFrame(ch.photo)}
+      <p class="ch-text">${ch.intro}</p>
+      <ul class="fragment-list">${ch.fragments.map(f=>`<li>${f}</li>`).join('')}</ul>
+    `;
+  }
+  if(ch.type === 'chat'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      ${photoFrame(ch.photo)}
+      <p class="ch-text">${ch.intro}</p>
+      <div class="chat-bubbles">${ch.bubbles.map((b,i)=>`<div class="chat-bubble${i%2? ' mine':''}">${b}</div>`).join('')}</div>
+      <p class="ch-text">${ch.outro}</p>
+    `;
+  }
+  if(ch.type === 'scrapbook'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      <p class="ch-text">${ch.intro}</p>
+      <div class="scrap-grid">
+        ${ch.items.map(it=>`<div class="scrap-item">${photoFrame(it.photo)}<div class="scrap-caption">${it.caption}</div></div>`).join('')}
+      </div>
+    `;
+  }
+  if(ch.type === 'evidence'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      <p class="ch-text">${ch.intro}</p>
+      ${ch.items.map(it=>`<span class="evidence-tag">${it.tag}</span>${photoFrame(it.photo)}`).join('')}
+    `;
+  }
+  if(ch.type === 'classified'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      <div class="classified-box">
+        <span class="classified-stamp">${ch.stamp}</span>
+        <p class="ch-text">${ch.intro}</p>
+        ${ch.files.map(f=>`<div class="classified-file"><span class="file-tag">${f.tag}</span>${f.text}</div>`).join('')}
+      </div>
+    `;
+  }
+  if(ch.type === 'letter'){
+    return `
+      <p class="ch-kicker">${ch.kicker}</p>
+      <h2 class="ch-title">${ch.title}</h2>
+      <div class="letter-box">
+        ${ch.paragraphs.map(p=>`<p class="ch-text">${p}</p>`).join('')}
+        <p class="letter-signoff">${ch.signoff}</p>
+      </div>
+    `;
+  }
+  return '';
+}
+
+function renderExtraPage(key){
+  if(key === 'hero'){
+    return `
+      <div class="hero-page">
+        <p class="top-tag" style="margin:0 auto 18px;">Hari ini spesial ✨</p>
+        <div class="hero-decor-row">🎈🎂🎈</div>
+        <h1 class="hero-headline">Happy Birthday,<span class="hero-name">Adek ❤️</span></h1>
+        <p class="hero-msg">Mas punya sedikit sesuatu untuk Adek hari ini — bukan yang mewah, tapi yang isinya beneran dipikirin. Dan iya... Cibao sama Me'o juga ikut nampang di dalamnya. 🤍🐱</p>
+        <button class="ch-cta" data-action="next">Lanjut, Mas mau bilang sesuatu ♡</button>
+      </div>`;
+  }
+  if(key === 'message'){
+    return `
+      <div class="message-paper">
+        <div class="stamp-corner">♡</div>
+        <p class="ch-kicker">DARI MAS, UNTUK ADEK</p>
+        <h2 class="ch-title">Selamat Ulang Tahun</h2>
+        <p class="ch-text">Adek, di hari ulang tahun ini Mas nggak mau nulis ucapan yang agak biasa biasa banget kayak "semoga panjang umur, sehat selalu" doang — meskipun itu juga tetap didoain sungguh-sungguh.</p>
+        <p class="ch-text">Yang lebih pengen Mas bilang: makasih udah jadi orang yang bikin hari-hari biasa jadi terasa nggak biasa. Mulai dari hal receh sampai hal yang beneran berat, Adek selalu jalanin dengan cara Adek sendiri sebelum ketemu sama mas, dan adek bisa survive and wow itu ga semua orang bisa kuat.</p>
+        <p class="ch-text">Semoga umur baru ini bawa lebih banyak alasan buat Adek tersenyum, lebih sedikit alasan buat capek, dan lebih banyak lagi cerita baru yang bisa kita simpan bareng-bareng.</p>
+        <p class="message-signoff">— Mas</p>
+      </div>
+      <button class="ch-cta" data-action="next" style="width:100%;">Masih ada lagi... ♡</button>
+    `;
+  }
+  if(key === 'cibao-intro' || key === 'meo-intro'){
+    const isCibao = key === 'cibao-intro';
+    return `
+      <div class="char-page">
+        <p class="ch-kicker">SEBELUM LANJUT</p>
+        <h2 class="ch-title">${isCibao ? 'Ada Yang Protes Kalau Dilewatin' : 'Satu Lagi Yang Nggak Boleh Ketinggalan'}</h2>
+        <p class="char-transition">${isCibao
+          ? 'Oh iya, sebelum kelanjutan cerita ini ditutup — ada satu makhluk kecil yang kayaknya bakal ngambek kalau nggak dimasukin ke sini. Dia kesayangan Adek, jadi wajib banget punya panggung sendiri.'
+          : 'Dan ternyata satu makhluk aja belum cukup. Ada satu lagi yang juga nggak mau kalah tampil.'}</p>
+        <button class="ch-cta" data-action="next">${isCibao ? 'Kenalan sama Cibao →' : 'Kenalan sama Me\'o →'}</button>
+      </div>`;
+  }
+  if(key === 'cibao'){
+    const c = CONFIG.characters.cibao;
+    return `
+      <div class="char-page">
+        <span class="char-badge">🤍 MEET CIBAO</span>
+        <h2 class="char-name">${c.name}</h2>
+        <p class="char-caption">${c.caption}</p>
+        <div class="polaroid cibao-frame">
+          <div class="tape"></div>
+          ${charImg('cibao')}
+          <p class="polaroid-cap">Cibao ♡</p>
+        </div>
+        <p class="ch-text" style="text-align:center;">Kesayangan Adek, dan sekarang resmi jadi bagian dari dunia kecil website ini juga.</p>
+        <button class="ch-cta" data-action="next">Lanjut ke Me'o →</button>
+      </div>`;
+  }
+  if(key === 'meo'){
+    const c = CONFIG.characters.meo;
+    return `
+      <div class="char-page">
+        <span class="char-badge" style="background:#fff0dd;">🐱 MEET ME'O</span>
+        <h2 class="char-name">${c.name}</h2>
+        <p class="char-caption">${c.caption}</p>
+        <div class="polaroid rot-right meo-frame">
+          <div class="tape"></div>
+          ${charImg('meo')}
+          <p class="polaroid-cap">Me'o 🐱</p>
+        </div>
+        <p class="ch-text" style="text-align:center;">Si kucing roti oranye yang juga ikut ramein dunia kecil ini.</p>
+        <button class="ch-cta" data-action="next">Lihat mereka berdua →</button>
+      </div>`;
+  }
+  if(key === 'duo'){
+    return `
+      <div class="char-page">
+        <span class="char-badge">🤍🐱 DUA KESAYANGAN ADEK</span>
+        <h2 class="char-name" style="margin-bottom:16px;">Cibao &amp; Me'o</h2>
+        <p class="ch-text" style="text-align:center;">Kayaknya ada dua bocil yang nggak boleh ketinggalan dari cerita ini. Jadi ini mereka, resmi jadi maskot kecil dari website Adek.</p>
+        <div class="duo-row">
+          <div class="polaroid cibao-frame">${charImg('cibao')}<p class="polaroid-cap">Cibao</p></div>
+          <span class="duo-plus">+</span>
+          <div class="polaroid rot-right meo-frame">${charImg('meo')}<p class="polaroid-cap">Me'o</p></div>
+        </div>
+        <button class="ch-cta" data-action="next">Lihat foto-foto kecil →</button>
+      </div>`;
+  }
+  if(key === 'gallery'){
+    return `
+      <div class="char-page">
+        <span class="char-badge">📸 PHOTO MEMORIES</span>
+        <h2 class="char-name">Kumpulan Foto Kecil</h2>
+        <p class="gallery-hint">geser untuk lihat semuanya →</p>
+        <div class="gallery-scroll">
+          ${GALLERY.map(g => `<div class="polaroid ${g.character === 'meo' ? 'meo-frame rot-right' : 'cibao-frame'}">${photoFrame(g.image, '', `Foto ${g.caption} akan ditempel di sini ♡`)}<p class="polaroid-cap">${g.caption}</p></div>`).join('')}
+        </div>
+        <button class="ch-cta" data-action="next">Ada surat kecil buat Adek →</button>
+      </div>`;
+  }
+  if(key === 'letter'){
+    return `
+      <div class="char-page">
+        <span class="char-badge">💌 PESAN SPESIAL</span>
+        <h2 class="char-name">Untuk Adek</h2>
+        <div class="envelope-wrap">
+          <div class="envelope" id="specialEnvelope" role="button" tabindex="0" aria-label="Buka amplop">
+            <div class="envelope-body"></div>
+            <div class="envelope-heart">♡</div>
+            <div class="envelope-flap"></div>
+          </div>
+          <p class="envelope-hint" id="envelopeHint">Tekan amplopnya, Adek 💌</p>
+          <div class="envelope-letter" id="envelopeLetter">
+            <p class="ch-text">Adek,</p>
+            <p class="ch-text">Ini surat kecil aja, nggak perlu panjang-panjang biar nggak capek bacanya.</p>
+            <p class="ch-text">Mas cuma mau bilang: makasih udah ada, di cerita yang masih Mas simpan baik-baik sampai sekarang. Semoga hari ini bikin Adek sedikit lebih tersenyum dari biasanya.</p>
+            <p class="message-signoff">— Mas ♡</p>
+          </div>
+        </div>
+        <button class="ch-cta" data-action="next" style="margin-top:8px;">Terakhir, ada satu lagi ♡</button>
+      </div>`;
+  }
+  if(key === 'final'){
+    return `
+      <div class="final-page">
+        <div class="final-icons">🎂🎁💕✨🌸🤍🐱</div>
+        <h2 class="final-title">Happy Birthday, Adek! ❤️</h2>
+        <div class="final-msg">
+          <p class="ch-text">Kalau nanti Adek lupa detail-detail kecil di website ini, nggak apa-apa. Tapi semoga Adek nggak lupa kalau hari ini ada seseorang yang semangat sibuk memastikan Adek bisa tetap bisa menjalani hari hari dengan bahagia.</p>
+          <p class="ch-text">Selamat ulang tahun, Adek. Semoga tahun ini pelan-pelan makin semua keadaan baik, dan cerita kita masih terus berlanjut.</p>
+        </div>
+        <p class="final-sign">— Mas ♡</p>
+        <div class="final-btn-row">
+          <button class="final-btn primary" data-action="restart-story">Ulangi dari awal ♡</button>
+          <button class="final-btn" data-action="ending">Peluk virtual dulu 🤍</button>
+        </div>
+      </div>`;
+  }
+  if(key === 'ending'){
+    return `
+      <div class="ending-page">
+        <p class="ending-num">🤍🐱</p>
+        <p class="ending-title">Complete.</p>
+        <p class="ending-but">Tapi...</p>
+        <p class="ending-line">CERITA KITA BELUM SELESAI.</p>
+        <p class="ending-sub">Ini cuma satu halaman lagi dari yang masih panjang, bismillah tahun depan mas dapat meminang adek🤍💍</p>
+        <button class="ch-cta" data-action="restart">Mulai lagi dari awal ↺</button>
+      </div>`;
+  }
+  return '';
+}
+
+/* ============================================================
+   Full page sequence: hero, message, [13 chapters], characters,
+   gallery, letter, final, ending
+   ============================================================ */
+const PAGES = [
+  {kind:'extra', key:'hero'},
+  {kind:'extra', key:'message'},
+  ...CHAPTERS.map(ch => ({kind:'chapter', data:ch})),
+  {kind:'extra', key:'cibao-intro'},
+  {kind:'extra', key:'cibao'},
+  {kind:'extra', key:'meo-intro'},
+  {kind:'extra', key:'meo'},
+  {kind:'extra', key:'duo'},
+  {kind:'extra', key:'gallery'},
+  {kind:'extra', key:'letter'},
+  {kind:'extra', key:'final'},
+  {kind:'extra', key:'ending'}
+];
+
+const bookStage = document.getElementById('bookStage');
+const bookDots = document.getElementById('bookDots');
+const bookProgress = document.getElementById('bookProgress');
+const bookPrevBtn = document.getElementById('bookPrevBtn');
+const bookNextBtn = document.getElementById('bookNextBtn');
+let currentPage = 0;
+let pageEls = [];
+
+function buildBook(){
+  bookStage.innerHTML = '';
+  pageEls = PAGES.map((p)=>{
+    const el = document.createElement('div');
+    el.className = 'book-page';
+    el.innerHTML = p.kind === 'chapter' ? renderChapter(p.data) : renderExtraPage(p.key);
+    bookStage.appendChild(el);
+    return el;
+  });
+  bookDots.innerHTML = CHAPTERS.map((_,i)=>`<span class="book-dot" data-dot="${i}"></span>`).join('');
+}
+buildBook();
+
+function goToPage(newIndex, direction){
+  if(newIndex < 0 || newIndex >= PAGES.length) return;
+  const oldIndex = currentPage;
+  const oldEl = pageEls[oldIndex];
+  const newEl = pageEls[newIndex];
+
+  if(oldEl !== newEl){
+    oldEl.classList.remove('active');
+    oldEl.classList.add(direction === 'next' ? 'leaving-prev' : 'leaving-next');
+    setTimeout(()=> oldEl.classList.remove('leaving-prev','leaving-next'), 520);
+  }
+
+  newEl.classList.remove('leaving-prev','leaving-next');
+  void newEl.offsetWidth;
+  newEl.classList.add('active');
+  newEl.scrollTop = 0;
+
+  currentPage = newIndex;
+  updateBookChrome();
+  wireEnvelope();
+}
+
+function chapterIndexOf(pageIndex){
+  const p = PAGES[pageIndex];
+  if(p.kind !== 'chapter') return -1;
+  return CHAPTERS.indexOf(p.data);
+}
+
+function updateBookChrome(){
+  const p = PAGES[currentPage];
+  const chIdx = chapterIndexOf(currentPage);
+  const showProgress = chIdx > -1;
+  bookProgress.style.display = showProgress ? '' : 'none';
+  if(showProgress){
+    bookProgress.textContent = String(chIdx+1).padStart(2,'0') + ' / ' + TOTAL_CHAPTERS;
+  }
+  const isEnding = p.kind === 'extra' && p.key === 'ending';
+  bookPrevBtn.disabled = currentPage === 0;
+  bookNextBtn.style.visibility = isEnding ? 'hidden' : 'visible';
+  bookPrevBtn.style.visibility = isEnding ? 'hidden' : 'visible';
+
+  document.querySelectorAll('.book-dot').forEach((d,i)=>{
+    d.classList.toggle('on', i === chIdx);
+  });
+}
+
+bookNextBtn.addEventListener('click', ()=> goToPage(currentPage+1, 'next'));
+bookPrevBtn.addEventListener('click', ()=> goToPage(currentPage-1, 'prev'));
+document.getElementById('bookRestartBtn').addEventListener('click', ()=> goToPage(0, 'prev'));
+
+bookStage.addEventListener('click', (e)=>{
+  const btn = e.target.closest('[data-action]');
+  if(!btn) return;
+  const action = btn.dataset.action;
+  if(action === 'next'){
+    goToPage(currentPage+1, 'next');
+    if(!musicPlaying) playMusic();
+  }
+  if(action === 'restart' || action === 'restart-story') goToPage(0, 'prev');
+  if(action === 'ending') goToPage(PAGES.length-1, 'next');
+});
+
+/* Envelope open/close interaction (re-wired every time its page becomes active) */
+function wireEnvelope(){
+  const env = document.getElementById('specialEnvelope');
+  if(!env || env.dataset.wired) return;
+  env.dataset.wired = '1';
+  const letter = document.getElementById('envelopeLetter');
+  const hint = document.getElementById('envelopeHint');
+  function openEnvelope(){
+    env.classList.add('open');
+    letter.classList.add('show');
+    if(hint) hint.textContent = 'Suratnya udah kebuka ♡';
+  }
+  env.addEventListener('click', openEnvelope);
+  env.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openEnvelope(); }
+  });
+}
+
+/* swipe support (mobile) */
+let touchStartX = 0, touchStartY = 0, touchActive = false;
+bookStage.addEventListener('touchstart', (e)=>{
+  touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY; touchActive = true;
+}, {passive:true});
+bookStage.addEventListener('touchend', (e)=>{
+  if(!touchActive) return;
+  touchActive = false;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  if(Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)*1.3) return;
+  if(dx < 0) goToPage(currentPage+1, 'next');
+  else goToPage(currentPage-1, 'prev');
+}, {passive:true});
+
+pageEls[0].classList.add('active');
+updateBookChrome();
+
+/* ============================================================
+   Gift open -> reveal main experience
+   ============================================================ */
+document.getElementById('openGiftCta').addEventListener('click', ()=>{
+  const wrap = document.querySelector('.wrap');
+  const bookView = document.getElementById('book-view');
+
+  wrap.classList.add('fading-out');
+
+  setTimeout(()=>{
+    wrap.style.display = 'none';
+    bookView.style.display = 'flex';
+    bookView.classList.add('show');
+    bookView.setAttribute('aria-hidden', 'false');
+
+    void bookView.offsetWidth;
+    bookView.classList.add('visible');
+
+    goToPage(0, 'next');
+    window.scrollTo({top:0, behavior:'auto'});
+
+    if(!musicPlaying) playMusic();
+  }, 380);
+});
+
+/* ============================================================
+   Easter egg: tap the little heart 5x for a secret note
+   ============================================================ */
+const eggHeart = document.getElementById('eggHeart');
+const eggModalOverlay = document.getElementById('eggModalOverlay');
+let eggTaps = 0;
+eggHeart.addEventListener('click', ()=>{
+  eggTaps++;
+  eggHeart.style.transform = 'scale(1.3)';
+  setTimeout(()=> eggHeart.style.transform = '', 150);
+  if(eggTaps >= 5){
+    eggTaps = 0;
+    eggModalOverlay.classList.add('open');
+  }
+});
+document.getElementById('eggModalCloseBtn').addEventListener('click', ()=> eggModalOverlay.classList.remove('open'));
+eggModalOverlay.addEventListener('click', (e)=>{ if(e.target === eggModalOverlay) eggModalOverlay.classList.remove('open'); });
+</script>
+
+</body>
+</html>
